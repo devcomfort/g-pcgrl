@@ -19,8 +19,8 @@ def triangular(n):
 
 def build_graph_map(conf, random, width):
     empty = width - sum(conf.values())
-    nodes = [*[NodeType.LOOT.value] * conf[NodeType.LOOT], *[NodeType.CRAFT.value] * conf[NodeType.CRAFT],
-             *[NodeType.ITEM.value] * conf[NodeType.ITEM], *[NodeType.EMPTY.value] * empty]
+    nodes = [*[NodeType.A.value] * conf[NodeType.A], *[NodeType.B.value] * conf[NodeType.B],
+             *[NodeType.C.value] * conf[NodeType.C], *[NodeType.EMPTY.value] * empty]
     random.shuffle(nodes)
 
     prob = {0: 0.6, 1: 0.4}
@@ -46,9 +46,9 @@ def init_graph_random(random, width, height, prob, *args, **kwargs):
             i = np.random.randint(0, len(nodes))
 
     conf = {
-        NodeType.LOOT: nodes[0],
-        NodeType.CRAFT: nodes[1],
-        NodeType.ITEM: 0  # nodes[2] #0
+        NodeType.A: nodes[0],
+        NodeType.B: nodes[1],
+        NodeType.C: 0  # nodes[2] #0
     }
     return build_graph_map(conf, random, width)
 
