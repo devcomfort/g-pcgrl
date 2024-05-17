@@ -1,1 +1,3 @@
-# G-PCGRL: Procedural Graph Data Generation with Reinforcement Learning
+# G-PCGRL: Procedural Graph Data Generation via Reinforcement Learning
+
+To be updated soon!
